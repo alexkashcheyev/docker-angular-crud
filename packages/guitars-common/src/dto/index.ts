@@ -1,0 +1,1 @@
+export { GuitarDto, aGuitarDto } from './guitar-dto'

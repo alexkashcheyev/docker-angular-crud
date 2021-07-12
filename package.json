@@ -1,0 +1,30 @@
+{
+  "name": "guitars",
+  "version": "1.0.0",
+  "description": "A personal assistant app",
+  "main": "index.js",
+  "repository": "https://github.com/alexkashcheyev/guitars-2",
+  "author": "alex.kashcheyev@yahoo.com",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/guitars-common",
+    "packages/guitars-server",
+    "packages/guitars-client",
+    "packages/guitars-server-test"
+  ],
+  "scripts": {
+    "clean": "rm -rf **/dist",
+    "dev": "docker-compose --env-file=example.env.dev up",
+    "dev:db-only": "docker-compose --env-file=example.env.dev up --build guitars-db",
+    "dev:no-client": "docker-compose --env-file=example.env.dev up --build guitars-db guitars-server",
+    "build": "yarn workspaces foreach -p run build"
+  },
+  "devDependencies": {
+    "@angular/cli": "^12.1.1",
+    "dotenv": "^10.0.0"
+  },
+  "dependencies": {
+    "dedent": "^0.7.0"
+  }
+}

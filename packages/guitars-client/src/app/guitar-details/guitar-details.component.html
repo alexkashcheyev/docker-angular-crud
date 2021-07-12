@@ -1,0 +1,38 @@
+<mat-card>
+    <mat-card-title>{{displayName}}</mat-card-title>
+    <mat-card-subtitle *ngIf="guitar.id !== null">{{guitar.id}}</mat-card-subtitle>
+    <mat-card-content>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Manufacturer</mat-label>
+                <input matInput required placeholder="Yamaha" [(ngModel)]="guitar.manufacturer" />
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Model</mat-label>
+                <input matInput required placeholder="RevStar RS 420" [(ngModel)]="guitar.modelName" />
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Year</mat-label>
+                <input matInput type="number" min="1936" placeholder="2019" [(ngModel)]="guitar.year" />
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Origin country</mat-label>
+                <input matInput required placeholder="Indonesia" [(ngModel)]="guitar.originCountry" />
+            </mat-form-field>
+        </p>
+        <p>
+            <button mat-button (click)="save()" color="primary">
+                Save
+            </button>
+            <button *ngIf="guitar.id !== null" mat-button (click)="delete()" color="warning">
+                Delete
+            </button>
+        </p>
+    </mat-card-content>
+</mat-card>

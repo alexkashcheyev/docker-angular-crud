@@ -1,0 +1,14 @@
+@use '~@angular/material' as mat;
+
+@include mat.core();
+@import url('~@angular/material/prebuilt-themes/deeppurple-amber.css');
+
+html, body {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+}
